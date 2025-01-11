@@ -31,13 +31,13 @@ html{
         transform: translateX(-100%);
     }
 }
-#projet{
+section{
     margin:  0 auto;
 }
 .projet-content{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); /* Colonnes adaptatives */
-    gap: 4rem;
+    gap: 1rem;
     grid-auto-rows: 20rem;
     // overflow: hidden;
     padding: 1rem;
@@ -51,7 +51,6 @@ html{
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        background-color: $secondary;
     
         img{
             height: 100%;
@@ -61,5 +60,18 @@ html{
         &:hover{
             transform: scale(1.1);
         }
+    }
+}
+.container_avis{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    grid-auto-rows: 15rem;
+    gap: 1rem;
+    padding: 1rem;
+    .avis_item{
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 .2rem $secondary;
     }
 }
