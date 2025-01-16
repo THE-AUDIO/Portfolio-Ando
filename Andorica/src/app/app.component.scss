@@ -1,7 +1,7 @@
 
 $primary:#0f0f0f;
 $secondary:#e3e3e3;
-
+$bef:25px;
 html{
     scroll-behavior: smooth !important;
 }
@@ -36,6 +36,7 @@ html{
 }
 section{
     margin:  0 auto;
+    width: 90%;
 }
 .projet-content{
     display: grid;
@@ -77,4 +78,65 @@ section{
         border-radius: 1rem;
         box-shadow: 0 0 .2rem $secondary;
     }
+}
+
+.marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card {
+    border-radius: 0.75rem;
+    border: 1px solid $secondary;
+    padding: 2rem;
+    height: 100px !important;
+    width: 250px !important;
+    cursor: pointer;
+    color: $secondary;
+
+  }
+
+  .marquee-gradient {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 33%;
+
+  }
+.timeline{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 20vh;
+    width: 80%;
+    padding: 0; 
+    &::before{
+        content: "";
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        background-color: $secondary;
+        border-radius: 100%;
+        z-index: 0 !important;
+    }
+    &::after{
+        z-index: 0 !important;
+        content: "";
+        position: absolute;
+        height: 90%;
+        width: 5px;
+        background-color: $secondary;
+        top: 2rem;
+        left: calc($bef / 2.5 );
+    }
+}
+.confiance{
+    z-index: 99 !important;
+}
+.step-container{
+    z-index: 1 !important;
 }

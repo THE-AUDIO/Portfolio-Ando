@@ -2,11 +2,12 @@ import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { NgxMarqueeComponent } from '@omnedia/ngx-marquee';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [NgxMarqueeComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -24,7 +25,7 @@ export class AppComponent implements AfterViewInit {
       const scrollingText = document.querySelector('.scrolling-text');
       const items = document.querySelectorAll('.item');
       const avis = document.querySelectorAll('.avis_item')
-
+      const timeline = document.querySelectorAll(".timeline")
       if (scrollingText) {
         gsap.to(".scrolling-text", {
           x: 2000,
@@ -65,9 +66,51 @@ export class AppComponent implements AfterViewInit {
           }
         })
       }
+      if(timeline.length){
+        gsap.from(".step1",{
+          y:305,
+          duration:4,
+          scrollTrigger:{
+            trigger:".step1",
+            start:"top 100%",
+            end: "top 70%",
+            scrub:1
+          }
+        })
+        
+      }
+      if(timeline.length){
+        gsap.from(".step2",{
+          y:305,
+          duration:4,
+          scrollTrigger:{
+            trigger:".step2",
+            start:"top 100%",
+            end: "top 70%",
+            scrub:1
+          }
+        })
+        
+      }
+      // if(timeline.length){
+      //   gsap.from(".step3",{
+      //     y:305,
+      //     zIndex:1,
+      //     duration:2,
+      //     scrollTrigger:{
+      //       trigger:".step3",
+      //       start:"top 100%",
+      //       end: "top 90%",
+      //       scrub:1
+      //     }
+      //   })
+        
+      // }
+      
     } else {
       console.warn('Exécution côté serveur - animations désactivées.');
     }
+
   }
 
   title = 'Andorica';
