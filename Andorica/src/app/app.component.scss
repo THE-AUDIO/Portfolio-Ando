@@ -35,7 +35,7 @@ html{
     }
 }
 section{
-    margin:  0 auto;
+    margin:  4rem auto;
     width: 90%;
 }
 .projet-content{
@@ -139,4 +139,35 @@ section{
 }
 .step-container{
     z-index: 1 !important;
+}
+.social-media{
+    a{
+        svg{
+            margin: auto .5rem;
+        }
+    }
+}
+.social-container{
+    position: relative;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background-color: $secondary;
+        top: 4rem;
+    }
+}
+.bg{
+    background-image: url("/assets/img/Cola.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    &::before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: #0f0f0f8c;
+    }
 }
