@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { NgxMarqueeComponent } from '@omnedia/ngx-marquee';
@@ -7,16 +7,19 @@ import { NgxMarqueeComponent } from '@omnedia/ngx-marquee';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NgxMarqueeComponent],
+  imports: [NgxMarqueeComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
-  ngAfterViewInit(): void {
+  ShowMenue:Boolean = false;
+  showMenue(){
+    this.ShowMenue = !this.ShowMenue
+    console.log(this.ShowMenue);
+  }
+  ngAfterViewInit(): void {     
     gsap.registerPlugin(ScrollTrigger);
-
     // Vérifie si la plateforme est le navigateur
     if (isPlatformBrowser(this.platformId)) {
       console.log('Exécution dans le navigateur.');

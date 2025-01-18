@@ -16,7 +16,6 @@ html{
 }
 
 .scrolling-text {
-    font-size: 10rem;
     color: $secondary; /* équivalent de text-secondary */
     white-space: nowrap;
     overflow: hidden;
@@ -112,7 +111,7 @@ section{
     justify-content: flex-start;
     flex-direction: column;
     height: 20vh;
-    width: 80%;
+    width: 75%;
     padding: 0; 
     &::before{
         content: "";
@@ -169,5 +168,35 @@ section{
       width: 100%;
       height: 100%;
       background-color: #0f0f0f8c;
+    }
+}
+
+@media screen and (max-width:1023px) {
+    .menue{
+        top: 0 ;
+        right: -100%;
+        position: absolute;
+        z-index: 99 !important;
+        transition: 250ms ease-in-out;
+    }
+    .hidden-menue{
+        right: 0;
+        transition: 250ms ease-in-out;
+
+    }
+    button{
+        z-index: 1000 !important;
+
+    }
+    .btn-menue{
+        position: relative;
+        transition: 200ms ease-in-out;
+        &:active{
+            transform: scale(1.2);
+        }
+    }
+    .timeline{
+        width: 100%;
+        height: 35vh !important;
     }
 }
