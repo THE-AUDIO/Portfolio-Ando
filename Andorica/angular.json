@@ -39,7 +39,8 @@
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
-            }
+            },
+            "baseHref": "/Portfolio-Ando/"
           },
           "configurations": {
             "production": {
@@ -47,7 +48,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "1.5MB"
                 },
                 {
                   "type": "anyComponentStyle",
