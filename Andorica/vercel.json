@@ -1,24 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "dist/andorica/server/server.mjs",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "dist/andorica/browser/**/*",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/index.html"
-      },
-      {
-        "src": "/assets/(.*)",
-        "dest": "/assets/$1"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/andorica/server/main.server.mjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/andorica/server/main.server.mjs"
+    }
+  ]
+}
